@@ -25,11 +25,13 @@ const App: React.FC = () => {
       {/* Header */}
       <header className="w-full flex items-center justify-between" style={{ height: '72px', padding: '0 16px', borderBottom: '1px solid #E5E7EB', position: 'relative', zIndex: 10 }}>
         <div className="flex items-center">
+        <a href="https://visa.nadra.gov.pk/">
           <img 
             src="./images/logo.png" 
             alt="Pak Visa Logo" 
             style={{ height: '44px', width: 'auto' }}
           />
+        </a>
         </div>
         <div className="flex flex-col justify-between" style={{ width: '28px', height: '18px', cursor: 'pointer' }} onClick={() => setMenuOpen(!menuOpen)}>
           <div style={{ height: '2.5px', width: '100%', backgroundColor: '#1E66B4', transition: 'all 0.3s' }}></div>
