@@ -14,7 +14,7 @@ const AppRouter: React.FC = () => {
         <Route path="/" element={<App />} />
         <Route path="/ehsan" element={<EhsanHashimi />} />
         <Route path="/laila" element={<LailaHashimi />} />
-        <Route path="/rohullah" element={<RohullahHashimi />} />
+        <Route path="/roh" element={<RohullahHashimi />} />
         <Route path="/neelab" element={<NeelabHashimi />} />
         <Route path="/zakia" element={<ZakiaHashimi />} />
       </Routes>
