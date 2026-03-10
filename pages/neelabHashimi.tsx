@@ -92,11 +92,13 @@ const App: React.FC = () => {
       <Loader loading={loading} />
 
       {/* Main Body */}
-
-          <main className="w-full flex-grow" style={{ padding: '30px 28px' }}>
-  {/* Added animation classes here: [animation:...] and [@keyframes...] */}
+         <main className="w-full flex-grow" style={{ padding: '30px 28px' }}>
+  {/* ANIMATION ADDED BELOW: 
+      - starts at opacity 0 and 40px down (translateY)
+      - ends at opacity 1 and original position (0px)
+  */}
   <div 
-    className="relative bg-[#F7F9FB] w-full [animation:fade-up_0.8s_ease-out_forwards] [@keyframes_fade-up_{from_{opacity:0;transform:translateY(20px)}to_{opacity:1;transform:translateY(0)}}]" 
+    className="relative bg-[#F7F9FB] w-full [animation:slide-up_0.8s_ease-out_forwards] [@keyframes_slide-up_{from_{opacity:0;transform:translateY(40px)}to_{opacity:1;transform:translateY(0)}}]" 
     style={{ padding: '40px 0px' }}
   >
     {/* Blue accent bar */}
@@ -139,23 +141,55 @@ const App: React.FC = () => {
 
       {/* Data Fields */}
       <div className="mt-6 flex flex-col items-center w-full px-4 text-center">
-        {[
-          { label: "NAME", value: "Hashimi Neelab" },
-          { label: "Passport No", value: "P03882570" },
-          { label: "Passport Country", value: "Afghanistan" },
-          { label: "Visa Category", value: "Medical" },
-          { label: "Visa Sub Category", value: "Short-Term" },
-          { label: "Application Type", value: "Entry" },
-          { label: "Staying Facility", value: "Single Entry" },
-          { label: "Visa Start Date", value: "01 Mar 2026" },
-          { label: "Visa End Date", value: "29 May 2026" },
-          { label: "Visa Duration", value: "60 day(s)" },
-        ].map((item, index) => (
-          <div key={index} className="mb-[22px]">
-            <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>{item.label}</p>
-            <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>{item.value}</p>
-          </div>
-        ))}
+        <div className="mb-[22px]">
+          <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>NAME</p>
+          <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>Hashimi Neelab</p>
+        </div>
+
+        <div className="mb-[22px]">
+          <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Passport No</p>
+          <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>P03882570</p>
+        </div>
+
+        <div className="mb-[22px]">
+          <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Passport Country</p>
+          <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>Afghanistan</p>
+        </div>
+
+        <div className="mb-[22px]">
+          <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Visa Category</p>
+          <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>Medical</p>
+        </div>
+
+        <div className="mb-[22px]">
+          <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Visa Sub Category</p>
+          <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>Short-Term</p>
+        </div>
+
+        <div className="mb-[22px]">
+          <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Application Type</p>
+          <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>Entry</p>
+        </div>
+
+        <div className="mb-[22px]">
+          <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Staying Facility</p>
+          <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>Single Entry</p>
+        </div>
+
+        <div className="mb-[22px]">
+          <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Visa Start Date</p>
+          <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>01 Mar 2026</p>
+        </div>
+
+        <div className="mb-[22px]">
+          <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Visa End Date</p>
+          <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>29 May 2026</p>
+        </div>
+
+        <div className="mb-[45px]">
+          <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Visa Duration</p>
+          <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>60 day(s)</p>
+        </div>
 
         <a 
           href="https://visa.nadra.gov.pk/e-visa/authenticate"
@@ -170,8 +204,7 @@ const App: React.FC = () => {
             border: 'none',
             cursor: 'pointer',
             display: 'inline-block',
-            textDecoration: 'none',
-            marginTop: '23px'
+            textDecoration: 'none'
           }}
         >
           Back to Login
