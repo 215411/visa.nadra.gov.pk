@@ -92,121 +92,93 @@ const App: React.FC = () => {
       <Loader loading={loading} />
 
       {/* Main Body */}
-      <main className="w-full flex-grow" style={{ padding: '30px 28px' }}>
-        <div className="relative bg-[#F7F9FB] w-full" style={{ padding: '40px 0px' }}>
-          {/* Blue accent bar */}
-          <div 
-            className="absolute top-0 left-0" 
-            style={{ width: '60px', height: '5px', backgroundColor: '#1E66B4' }}
-          ></div>
+       <main className="w-full flex-grow" style={{ padding: '30px 28px' }}>
+  {/* Added animation classes here: [animation:...] and [@keyframes...] */}
+  <div 
+    className="relative bg-[#F7F9FB] w-full [animation:fade-up_0.8s_ease-out_forwards] [@keyframes_fade-up_{from_{opacity:0;transform:translateY(20px)}to_{opacity:1;transform:translateY(0)}}]" 
+    style={{ padding: '40px 0px' }}
+  >
+    {/* Blue accent bar */}
+    <div 
+      className="absolute top-0 left-0" 
+      style={{ width: '60px', height: '5px', backgroundColor: '#1E66B4' }}
+    ></div>
 
-          {/* Visa Reference */}
-          <div className="flex flex-col items-center px-4">
-            <h1 style={{ fontSize: '18px', fontWeight: 700, color: '#1E66B4' }}>
-              Visa Reference Number -
-            </h1>
-            <h2 style={{ fontSize: '21px', fontWeight: 700, color: '#1E66B4', marginTop: '12px' }}>
-              88005787088
-            </h2>
+    {/* Visa Reference */}
+    <div className="flex flex-col items-center px-4">
+      <h1 style={{ fontSize: '18px', fontWeight: 700, color: '#1E66B4' }}>
+        Visa Reference Number -
+      </h1>
+      <h2 style={{ fontSize: '21px', fontWeight: 700, color: '#1E66B4', marginTop: '12px' }}>
+        88005787088
+      </h2>
+    </div>
+
+    {/* Divider */}
+    <div style={{ width: '80%', height: '1px', backgroundColor: '#E6E6E6', margin: '28px auto' }}></div>
+
+    {/* Profile Section */}
+    <div className="flex flex-col items-center">
+      {/* Image Frame */}
+      <div 
+        style={{ 
+          width: '140px', 
+          height: '174px', 
+          overflow: 'hidden',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+          backgroundColor: '#eee'
+        }}
+      >
+        <img 
+          src="./images/neelab.png" 
+          alt="Applicant" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Data Fields */}
+      <div className="mt-6 flex flex-col items-center w-full px-4 text-center">
+        {[
+          { label: "NAME", value: "Hashimi Neelab" },
+          { label: "Passport No", value: "P03882570" },
+          { label: "Passport Country", value: "Afghanistan" },
+          { label: "Visa Category", value: "Medical" },
+          { label: "Visa Sub Category", value: "Short-Term" },
+          { label: "Application Type", value: "Entry" },
+          { label: "Staying Facility", value: "Single Entry" },
+          { label: "Visa Start Date", value: "01 Mar 2026" },
+          { label: "Visa End Date", value: "29 May 2026" },
+          { label: "Visa Duration", value: "60 day(s)" },
+        ].map((item, index) => (
+          <div key={index} className="mb-[22px]">
+            <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>{item.label}</p>
+            <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>{item.value}</p>
           </div>
+        ))}
 
-          {/* Divider */}
-          <div style={{ width: '80%', height: '1px', backgroundColor: '#E6E6E6', margin: '28px auto' }}></div>
-
-          {/* Profile Section */}
-          <div className="flex flex-col items-center">
-            {/* Image Frame */}
-            <div 
-              style={{ 
-                width: '140px', 
-                height: '174px', 
-                overflow: 'hidden',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                backgroundColor: '#eee'
-              }}
-            >
-              <img 
-                src="./images/neelab.png" 
-                alt="Applicant" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Data Fields */}
-            <div className="mt-6 flex flex-col items-center w-full px-4 text-center">
-              <div className="mb-[22px]">
-                <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>NAME</p>
-                <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>Hashimi Neelab</p>
-              </div>
-
-              <div className="mb-[22px]">
-                <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Passport No</p>
-                <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>P03882570</p>
-              </div>
-
-              <div className="mb-[22px]">
-                <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Passport Country</p>
-                <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>Afghanistan</p>
-              </div>
-
-              <div className="mb-[22px]">
-                <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Visa Category</p>
-                <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>Medical</p>
-              </div>
-
-              <div className="mb-[22px]">
-                <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Visa Sub Category</p>
-                <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>Short-Term</p>
-              </div>
-
-              <div className="mb-[22px]">
-                <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Application Type</p>
-                <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>Entry</p>
-              </div>
-
-              <div className="mb-[22px]">
-                <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Staying Facility</p>
-                <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>Single Entry</p>
-              </div>
-
-              <div className="mb-[22px]">
-                <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Visa Start Date</p>
-                <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>01 Mar 2026</p>
-              </div>
-
-              <div className="mb-[22px]">
-                <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Visa End Date</p>
-                <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>29 May 2026</p>
-              </div>
-
-              <div className="mb-[45px]">
-                <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Visa Duration</p>
-                <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>60 day(s)</p>
-              </div>
-
-              <a 
-                href="https://visa.nadra.gov.pk/e-visa/authenticate"
-                className="hover:bg-[#005a96] transition-colors"
-                style={{ 
-                  backgroundColor: '#0068AC', 
-                  color: 'white', 
-                  padding: '12px 30px', 
-                  fontSize: '17px', 
-                  fontWeight: 600, 
-                  borderRadius: '2px',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'inline-block',
-                  textDecoration: 'none'
-                }}
-              >
-                Back to Login
-              </a>
-            </div>
-          </div>
-        </div>
-      </main>
-
+        <a 
+          href="https://visa.nadra.gov.pk/e-visa/authenticate"
+          className="hover:bg-[#005a96] transition-colors"
+          style={{ 
+            backgroundColor: '#0068AC', 
+            color: 'white', 
+            padding: '12px 30px', 
+            fontSize: '17px', 
+            fontWeight: 600, 
+            borderRadius: '2px',
+            border: 'none',
+            cursor: 'pointer',
+            display: 'inline-block',
+            textDecoration: 'none',
+            marginTop: '23px'
+          }}
+        >
+          Back to Login
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
       {/* Footer */}
       <footer 
         className="w-full" 
