@@ -172,12 +172,12 @@ const App: React.FC = () => {
 
               <div className="mb-[22px]">
                 <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Visa Start Date</p>
-                <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>20 Dec 2025</p>
+                <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>01 Mar 2026</p>
               </div>
 
               <div className="mb-[22px]">
                 <p style={{ fontSize: '13px', fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', marginBottom: '6px' }}>Visa End Date</p>
-                <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>20 Mar 2026</p>
+                <p style={{ fontSize: '16px', fontWeight: 600, color: '#374151' }}>29 May 2026</p>
               </div>
 
               <div className="mb-[45px]">
