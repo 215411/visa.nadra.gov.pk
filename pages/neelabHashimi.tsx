@@ -92,7 +92,8 @@ const App: React.FC = () => {
       <Loader loading={loading} />
 
       {/* Main Body */}
-       <main className="w-full flex-grow" style={{ padding: '30px 28px' }}>
+
+          <main className="w-full flex-grow" style={{ padding: '30px 28px' }}>
   {/* Added animation classes here: [animation:...] and [@keyframes...] */}
   <div 
     className="relative bg-[#F7F9FB] w-full [animation:fade-up_0.8s_ease-out_forwards] [@keyframes_fade-up_{from_{opacity:0;transform:translateY(20px)}to_{opacity:1;transform:translateY(0)}}]" 
@@ -179,6 +180,7 @@ const App: React.FC = () => {
     </div>
   </div>
 </main>
+      
       {/* Footer */}
       <footer 
         className="w-full" 
